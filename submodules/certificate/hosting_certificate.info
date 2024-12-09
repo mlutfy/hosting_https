@@ -4,5 +4,6 @@ package = Aegir HTTPS
 dependencies[] = hosting
 
 core = 7.x
+backdrop = 1.x
 
 files[] = hosting_certificate.service.inc

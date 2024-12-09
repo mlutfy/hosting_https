@@ -1,14 +1,5 @@
 {
-  "autoload": {
-    "psr-0": {
-      "Provision_": [
-        "drush/Provision",
-        "submodules/apache_https/drush/Provision",
-        "submodules/certificate/drush/Provision",
-        "submodules/letsencrypt/drush/Provision",
-        "submodules/nginx_https/drush/Provision",
-        "submodules/self_signed/drush/Provision"
-      ]
-    }
-  }
+    "name": "mlutfy/hosting_https",
+    "type": "drupal-module",
+    "description": "hosting https module for Aegir"
 }

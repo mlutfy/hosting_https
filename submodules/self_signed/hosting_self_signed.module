@@ -9,5 +9,14 @@
  * Implements hook_hosting_service().
  */
 function hosting_self_signed_hosting_service() {
-  return array('SelfSigned' => 'Certificate');
+  return ['SelfSigned' => 'Certificate'];
+}
+
+/**
+ * Implements hook_autoload_info() for Backdrop.
+ */
+function hosting_self_signed_autoload_info() {
+  return [
+    'hostingService_Certificate_SelfSigned' => 'hosting_self_signed.service.inc',
+  ];
 }

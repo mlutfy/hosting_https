@@ -1,9 +1,8 @@
 name = Aegir HTTPS
 description = Adds HTTPS support to Aegir sites.
 package = Aegir HTTPS
-dependencies[] = hosting_web_server
-dependencies[] = hosting_certificate
-
 core = 7.x
+backdrop = 1.x
 
+dependencies[] = hosting_certificate
 files[] = hosting_https.service.inc

@@ -13,3 +13,12 @@ function hosting_nginx_https_hosting_service() {
     'https_nginx' => 'http',
   );
 }
+
+/**
+ * Implements hook_autoload_info() for Backdrop.
+ */
+function hosting_nginx_https_autoload_info() {
+  return [
+    'hostingService_http_https_nginx' => 'hosting_nginx_https.service.inc',
+  ];
+}

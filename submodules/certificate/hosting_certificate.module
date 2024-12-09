@@ -15,3 +15,12 @@ function hosting_certificate_hosting_service_type() {
     ),
   );
 }
+
+/**
+ * Implements hook_autoload_info() for Backdrop.
+ */
+function hosting_certificate_autoload_info() {
+  return [
+    'hostingService_Certificate' => 'hosting_certificate.service.inc',
+  ];
+}

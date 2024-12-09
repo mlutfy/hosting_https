@@ -21,6 +21,15 @@ define('HOSTING_HTTPS_CLIENT_AUTHENTICATION_ENABLED', 1);
 include_once 'hosting_https.nodeapi.inc';
 
 /**
+ * Implements hook_autoload_info() for Backdrop.
+ */
+function hosting_https_autoload_info() {
+  return [
+    'hostingService_https' => 'hosting_https.service.inc',
+  ];
+}
+
+/**
  * Implements hook_permission().
  *
  * @todo Move this to the 'manual' certificate service implementation.
@@ -38,10 +47,10 @@ function hosting_https_permission() {
  */
 function hosting_https_get_servers($access_check = TRUE) {
   $servers = hosting_get_servers('http', $access_check);
-  $https_servers = array();
+  $https_servers = [];
   foreach ($servers as $nid => $title) {
     $server = node_load($nid);
-    $check_servers = array();
+    $check_servers = [];
 
     if ($server->services['http']->type == 'cluster') {
       foreach ($server->services['http']->web_servers as $inner_nid) {
