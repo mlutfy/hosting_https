@@ -20,11 +20,6 @@ class Provision_Service_Certificate_SelfSigned extends Provision_Service_Certifi
     $this->configs['server'][] = 'Provision_Config_SelfSigned';
 
     /**
-     * Configurable values.
-     */
-    $this->server->setProperty('self_signed_field', 'default');
-
-    /**
      * Non configurable values.
      */
     $this->server->self_signed_config_path = $this->server->aegir_root . '/config/self_signed.d';
