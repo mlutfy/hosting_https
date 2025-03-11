@@ -13,10 +13,17 @@ class hostingService_Certificate_LetsEncrypt extends hostingService_Certificate 
   public $type = 'LetsEncrypt';
 
   protected $letsencrypt_ca = 'production';
-  protected $letsencrypt_ca_options = array(
+  protected $letsencrypt_ca_options = [
     'staging' => 'Staging',
     'production' => 'Production',
-  );
+  ];
+
+  public function __construct($node, $values = NULL) {
+    // Somehow this needs to happen, otherwise the $type is NULL
+    // and we cannot correctly set the service when editing the server node
+    parent::__construct($node, $values);
+    $this->type = 'LetsEncrypt';
+  }
 
   /**
    * node operations
